@@ -1,7 +1,6 @@
-import axios from "axios"
-
+import axios from 'axios'
 export default () => {
     return axios.create({
-        baseURL:`htp://localhost:8081/`
+        baseURL:`http://localhost:8081/`
     })
 }
