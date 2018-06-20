@@ -16,7 +16,12 @@ module.exports = {
            // })
         try {       
             const user = await User.create(req.body)
-            res.send(user.toJSON())
+            const userJson = user.toJSON()
+            res.send({
+                user: userJson,
+                token: jwtSignUser(userJson)
+            })
+            // res.send(user.toJSON())
         } catch (err) {
             // if user exists
             res.status(400).send({
